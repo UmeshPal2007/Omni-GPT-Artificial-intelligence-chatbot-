@@ -1,1 +1,1 @@
-# Omni-GPT-an-artificial-intelligence-chatbot-
+# Omni-GPT-Artificial-intelligence-chatbot
