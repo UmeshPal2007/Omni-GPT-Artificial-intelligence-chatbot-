@@ -1,0 +1,98 @@
+/* UNIVERSAL CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-color: #2f2f2f;
+}
+
+/* ROOT VARIABLES */
+:root {
+    --bg-sidebar: #17171717;
+    --bg-main: #212121;
+    --bg-input: #2f2f2f;
+    --bg-hover: #2a2a2a;
+    --bg-active: #343434;
+    --border-color: #2f2f2f;
+    --text-primary: #ececec;
+    --text-secondary: #b4b4b4;
+    --text-muted: #8e8e8e;
+    --accent: #ffffff;
+    --accent-green: #10a37f;
+    --user-bubble: #2f2f2f;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helventica, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font);
+    background:var(--bg-main);
+    color:var(--text-primary);
+    height:var(100vh);
+    overflow: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+/* APP LAYOUT */
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sidebar {
+    background: var(--bg-sidebar);
+}
+
+.avatar {
+    background: var(--accent-green);
+}
+
+.main {
+    background-color: #212121;
+}
+
+.input-area {
+    background-color: #2f2f2f;
+}
+
+:hover {
+    background-color: #2a2a2a;
+}
+
+:active {
+    background-color: #343434;
+}
