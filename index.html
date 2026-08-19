@@ -10,58 +10,99 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <div class="app">
+<!--=============================================== BODY =========================================================================-->
 
-    <!-- Sidebar -->
+<body>
+
+  <!--========================================================= SIDEBAR ==================================================================-->
     <aside class="sidebar" id="sidebar">
+
+      <!-- SIDEBAR TOP -->
       <div class="sidebar-top">
         <button class="new-chat-btn" id="newChatBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
-            stroke="currentColor" className="size-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          <svg id="newChatSVG" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M7 5C5.34315 5 4 6.34315 4 8V16C4 17.6569 5.34315 19 7 19H17C18.6569 19 20 17.6569 20 16V12.5C20 11.9477 20.4477 11.5 21 11.5C21.5523 11.5 22 11.9477 22 12.5V16C22 18.7614 19.7614 21 17 21H7C4.23858 21 2 18.7614 2 16V8C2 5.23858 4.23858 3 7 3H10.5C11.0523 3 11.5 3.44772 11.5 4C11.5 4.55228 11.0523 5 10.5 5H7Z"
+                fill="#ffffff"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M18.8431 3.58579C18.0621 2.80474 16.7957 2.80474 16.0147 3.58579L11.6806 7.91992L11.0148 11.9455C10.8917 12.6897 11.537 13.3342 12.281 13.21L16.3011 12.5394L20.6347 8.20582C21.4158 7.42477 21.4158 6.15844 20.6347 5.37739L18.8431 3.58579ZM13.1933 11.0302L13.5489 8.87995L17.4289 5L19.2205 6.7916L15.34 10.6721L13.1933 11.0302Z"
+                fill="#ffffff"></path>
+            </g>
           </svg>
           New Chat
         </button>
       </div>
-
-      <div class="chat-history" id="chatHistory"></div>
-      <!-- Js will inject past conversation items here, e.g.
-   <div class="history-item active">
-    <span class="history-title">Untitled chat</span>
-    <button class="history-delete">X</button>
-    <div> -->
       <p class="history-empty" id="historyEmpty">No Conversations yet</p>
-  </div>
+    </aside>
 
-  <div class="sidebar-bottom">
-    <button class="sidebar-btn" id="apiKeyBtn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-        <g id="SVGRepo_iconCarrier">
-          <path
-            d="M21.3,19a2.42,2.42,0,0,1-2.5.56l-2.35,2.35a.34.34,0,0,1-.49,0l-1-1a.36.36,0,0,1,0-.49l2.36-2.35a2.39,2.39,0,0,1,3.39-2.91L19.12,16.8l1,1,1.62-1.62A2.39,2.39,0,0,1,21.3,19ZM22,8v5.76A4.47,4.47,0,0,0,19.5,13a4.57,4.57,0,0,0-1.29.19V9.29H16.66V14A4.5,4.5,0,0,0,15,17.5a4.07,4.07,0,0,0,0,.5H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H20A2,2,0,0,1,22,8ZM11,15,9.09,9.27H7L5.17,15h1.7l.29-1.07H9L9.29,15Zm4.77-3.89a1.67,1.67,0,0,0-.55-1.35,2.43,2.43,0,0,0-1.62-.47h-2V15h1.54V13.11h.44a2.75,2.75,0,0,0,1-.17,1.82,1.82,0,0,0,.67-.44,1.63,1.63,0,0,0,.36-.64A2.36,2.36,0,0,0,15.75,11.11Zm-7.3.62-.12-.44-.15-.58c0-.21-.08-.37-.11-.5a4.63,4.63,0,0,1-.1.48c0,.19-.08.38-.13.57s-.08.34-.12.47l-.24.93H8.69Zm5.59-1a.63.63,0,0,0-.5-.17h-.4v1.31h.31a.9.9,0,0,0,.37-.07.59.59,0,0,0,.27-.22.75.75,0,0,0,.11-.42A.57.57,0,0,0,14,10.71Z">
-          </path>
-          <rect width="24" height="24" fill="none"></rect>
-        </g>
-      </svg>API Settings
-    </button>
-  </div>
-  </aside>
-
-  <!-- Main Chat Area -->
+  <!-- ===================================================== MAIN SCREEN AREA =========================================================== -->
   <main class="main">
 
     <header class="main-header">
-      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <svg fill="#000000" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
-            <path
-              d="M8 10.5H16M8 14.5H11M21.0039 12C21.0039 16.9706 16.9745 21 12.0039 21C9.9675 21 3.00463 21 3.00463 21C3.00463 21 4.56382 17.2561 3.93982 16.0008C3.34076 14.7956 3.00391 13.4372 3.00391 12C3.00391 7.02944 7.03334 3 12.0039 3C16.9745 3 21.0039 7.02944 21.0039 12Z"
-              stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <rect id="Icons" x="0" y="-64" width="1280" height="800" style="fill:none;"></rect>
+            <g id="Icons1" serif:id="Icons">
+              <g id="Strike"> </g>
+              <g id="H1"> </g>
+              <g id="H2"> </g>
+              <g id="H3"> </g>
+              <g id="list-ul"> </g>
+              <g id="hamburger-1"> </g>
+              <g id="hamburger-2"> </g>
+              <g id="list-ol"> </g>
+              <g id="list-task"> </g>
+              <g id="trash"> </g>
+              <g id="vertical-menu"> </g>
+              <g id="horizontal-menu"> </g>
+              <g id="sidebar-2"> </g>
+              <g id="Pen"> </g>
+              <g id="Pen1" serif:id="Pen"> </g>
+              <g id="clock"> </g>
+              <g id="external-link"> </g>
+              <g id="hr"> </g>
+              <g id="info"> </g>
+              <g id="warning"> </g>
+              <g id="plus-circle"> </g>
+              <g id="minus-circle"> </g>
+              <g id="vue"> </g>
+              <g id="cog"> </g>
+              <g id="logo"> </g>
+              <g id="radio-check"> </g>
+              <g id="eye-slash"> </g>
+              <g id="eye"> </g>
+              <g id="toggle-off"> </g>
+              <path id="sidebar"
+                d="M50.01,56.074l-35.989,0c-3.309,0 -5.995,-2.686 -5.995,-5.995l0,-36.011c0,-3.308 2.686,-5.994 5.995,-5.994l35.989,0c3.309,0 5.995,2.686 5.995,5.994l0,36.011c0,3.309 -2.686,5.995 -5.995,5.995Zm-25.984,-4l0,-40l-9.012,0c-1.65,0.001 -2.989,1.34 -2.989,2.989l0,34.022c0,1.649 1.339,2.989 2.989,2.989l9.012,0Zm24.991,-40l-20.991,0l0,40l20.991,0c1.65,0 2.989,-1.34 2.989,-2.989l0,-34.022c0,-1.649 -1.339,-2.988 -2.989,-2.989Z">
+              </path>
+              <g id="shredder"> </g>
+              <g id="spinner--loading--dots-" serif:id="spinner [loading, dots]"> </g>
+              <g id="react"> </g>
+              <g id="check-selected"> </g>
+              <g id="turn-off"> </g>
+              <g id="code-block"> </g>
+              <g id="user"> </g>
+              <g id="coffee-bean"> </g>
+              <g id="coffee-beans">
+                <g id="coffee-bean1" serif:id="coffee-bean"> </g>
+              </g>
+              <g id="coffee-bean-filled"> </g>
+              <g id="coffee-beans-filled">
+                <g id="coffee-bean2" serif:id="coffee-bean"> </g>
+              </g>
+              <g id="clipboard"> </g>
+              <g id="clipboard-paste"> </g>
+              <g id="clipboard-copy"> </g>
+              <g id="Layer1"> </g>
+            </g>
           </g>
         </svg>
       </button>
@@ -74,7 +115,7 @@
       </select>
     </header>
 
-    <!-- Messages -->
+    <!-- CHAT WINDOW -->
     <section class="chat-window" id="chatWindow">
       <div class="empty-state" id="emptyState">
         <h1>What can I help with?</h1>
@@ -85,56 +126,47 @@
           <button class="suggestion-card">Summarize a document</button>
         </div>
       </div>
-
-      <div class="messages" id="messages">
-        <!-- JS will inject messages here, e.g.
-        <div class="message-user">
-          <div class="avatar">U</div>
-          <div class="message-content">Hello!</div>
-        </div>
-
-        <div class="message assistant">
-          <div class="avatar">AI</div>
-          <div class="message-content">Hi, How can I help?</div>
-        </div> -->
-      </div>
+      <div class="messages" id="messages"></div>
     </section>
 
-    <!-- Input Bar -->
+    <!-- INPUT BAR -->
     <footer class="input-area">
       <form class="input-form" id="chatForm">
         <textarea id="userInput" class="user-input" placeholder="Message ChatBot..." rows="1"
           autocomplete="off"></textarea>
         <button type="submit" class="send-btn" id="sendBtn" disabled aria-label="Send message">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M10.3009 13.6949L20.102 3.89742M10.5795 14.1355L12.8019 18.5804C13.339 19.6545 13.6075 20.1916 13.9458 20.3356C14.2394 20.4606 14.575 20.4379 14.8492 20.2747C15.1651 20.0866 15.3591 19.5183 15.7472 18.3818L19.9463 6.08434C20.2845 5.09409 20.4535 4.59896 20.3378 4.27142C20.2371 3.98648 20.013 3.76234 19.7281 3.66167C19.4005 3.54595 18.9054 3.71502 17.9151 4.05315L5.61763 8.2523C4.48114 8.64037 3.91289 8.83441 3.72478 9.15032C3.56153 9.42447 3.53891 9.76007 3.66389 10.0536C3.80791 10.3919 4.34498 10.6605 5.41912 11.1975L9.86397 13.42C10.041 13.5085 10.1295 13.5527 10.2061 13.6118C10.2742 13.6643 10.3352 13.7253 10.3876 13.7933C10.4468 13.87 10.491 13.9585 10.5795 14.1355Z"
+                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
           </svg>
-
         </button>
       </form>
       <p class="disclaimer">AI can make mistakes. Check important info.</p>
     </footer>
-
   </main>
-  </div>
 
-  <!-- API Key Modal -->
-  <div class="madal-overlay" id="modalOverlay">
-    <div class="modal">
-      <h2>API Settings</h2>
-      <label for="apiKeyInput">OpenAI API Key</label>
-      <input type="password" id="apiKeyInput" placeholder="sk..." autocomplete="off">
-      <p class="modal-hint">Stored only in your browser (localstorage). Never shared.</p>
-      <div class="modal-actions">
-        <button class="modal-btn secondary" id="modalCancel">Cancel</button>
-        <button class="modal-btn primary" id="modalSave">Save</button>
-      </div>
-    </div>
-  </div>
 
-  <!-- JavaScript Added -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--====================================================== JavaScript Added ============================================================-->
   <script src="script.js"></script>
 </body>
 
